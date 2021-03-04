@@ -1,0 +1,46 @@
+﻿<Page x:Class="MobileShop2016.SearchProduct"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MobileShop2016"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+	Title="SearchProduct">
+    <Page.Resources>
+        <local:ImageConverter x:Key="ic"/>
+        <Style x:Key="Title" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+    </Page.Resources>
+    <Grid>
+        <StackPanel>
+            <!--=============Sản phẩm mới nhất================-->
+            <Border Height="50" Background="#64b5f6">
+                <TextBlock Name="txtTitle" Style="{StaticResource Title}"/>
+            </Border>
+            <ListBox ItemsSource="{Binding}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <Image Source="{Binding Path=ProductID, Converter={StaticResource ic}}"
+                               Width="200" Height="150"
+                               HorizontalAlignment="Center"/>
+                            <TextBlock Text="{Binding ProductName}" HorizontalAlignment="Center" FontSize="16"/>
+                            <TextBlock Text="{Binding UnitPrice, StringFormat='{}{0:c}', ConverterCulture=vi-VN}" 
+                                   HorizontalAlignment="Center" FontSize="16"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Columns="5"/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+            </ListBox>
+        </StackPanel>
+    </Grid>
+</Page>

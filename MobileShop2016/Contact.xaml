@@ -1,0 +1,61 @@
+﻿<Page x:Class="MobileShop2016.Contact"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="500"
+	Title="Contact">
+    <Page.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="MSSV" FontWeight="Bold"/>
+        <TextBlock Grid.Column="1" Text="Name" FontWeight="Bold"/>
+        <TextBlock Grid.Column="2" Text="E-mail" FontWeight="Bold"/>
+        <TextBlock Grid.Column="3" Text="Phone number" FontWeight="Bold"/>
+
+        <TextBlock Grid.Row="1" Text="1364099"/>
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="Triệu Uy Tuấn"/>
+        <TextBlock Grid.Row="1" Grid.Column="2" Text="uytuan213@gmail.com"/>
+        <TextBlock Grid.Row="1" Grid.Column="3" Text="01664381400"/>
+
+        <TextBlock Grid.Row="2" Text="1364096"/>
+        <TextBlock Grid.Row="2" Grid.Column="1" Text="Phan Hoàng Tuấn"/>
+        <TextBlock Grid.Row="2" Grid.Column="2" Text="phanhoangtuan@gmail.com"/>
+        <TextBlock Grid.Row="2" Grid.Column="3" Text="0123456789"/>
+
+        <TextBlock Grid.Row="3" Text="1364130"/>
+        <TextBlock Grid.Row="3" Grid.Column="1" Text="Nguyễn Thị Lan Anh"/>
+        <TextBlock Grid.Row="3" Grid.Column="2" Text="nguyenthilananh@gmail.com"/>
+        <TextBlock Grid.Row="3" Grid.Column="3" Text="01665786325"/>
+
+        <TextBlock Grid.Row="4" Text="1364131"/>
+        <TextBlock Grid.Row="4" Grid.Column="1" Text="Nguyễn Thị Thùy Dương"/>
+        <TextBlock Grid.Row="4" Grid.Column="2" Text="thuyduong@gmail.com"/>
+        <TextBlock Grid.Row="4" Grid.Column="3" Text="0982336541"/>
+
+        <TextBlock Grid.Row="5" Text="1364015"/>
+        <TextBlock Grid.Row="5" Grid.Column="1" Text="Bùi Hải Dương"/>
+        <TextBlock Grid.Row="5" Grid.Column="2" Text="buihaiduong@gmail.com"/>
+        <TextBlock Grid.Row="5" Grid.Column="3" Text="0935648752"/>
+    </Grid>
+</Page>

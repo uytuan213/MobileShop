@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9324f8143d8f440f8d74dcd1c62aa4dd" Name="Diagram1">
+        <EntityTypeShape EntityType="QLBHModel.Account" Width="1.5" PointX="7" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBHModel.Category" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBHModel.City" Width="1.5" PointX="5.125" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBHModel.Order" Width="1.5" PointX="9.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBHModel.Product" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBHModel.Supplier" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <AssociationConnector Association="QLBHModel.FK_Acc_City" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBHModel.FK_Order_Acc" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBHModel.FK_Product_Cat" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBHModel.FK_Product_Supplier" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

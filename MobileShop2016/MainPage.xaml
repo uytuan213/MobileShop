@@ -1,0 +1,93 @@
+﻿<Page x:Class="MobileShop2016.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MobileShop2016"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+	Title="MainPage">
+    <Page.Resources>
+        <local:MainDB x:Key="db"/>
+        <local:ImageConverter x:Key="ic"/>
+        <Style x:Key="Title" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+    </Page.Resources>
+    <ScrollViewer>
+        <StackPanel>
+            <!--=============Sản phẩm mới nhất================-->
+            <Border Height="50" Background="#64b5f6">
+                <TextBlock Style="{StaticResource Title}" Text="Sản phẩm mới nhất"/>
+            </Border>
+            <ListBox ItemsSource="{Binding Source={StaticResource db}, Path=NewestProducts}" SelectionChanged="ListBox_SelectionChanged">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <Image Source="{Binding Path=ProductID, Converter={StaticResource ic}}"
+                               Width="200" Height="150"
+                               HorizontalAlignment="Center"/>
+                            <TextBlock Text="{Binding ProductName}" HorizontalAlignment="Center" FontSize="16"/>
+                            <TextBlock Text="{Binding UnitPrice, StringFormat='{}{0:c}', ConverterCulture=vi-VN}" 
+                                   HorizontalAlignment="Center" FontSize="16"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Columns="5"/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+            </ListBox>
+            <!--=============Sản phẩm bán chạy nhất================-->
+            <Border Height="50" Background="#64b5f6">
+                <TextBlock Style="{StaticResource Title}" Text="Sản phẩm bán chạy nhất"/>
+            </Border>
+            <ListBox Name="lbBS" ItemsSource="{Binding Source={StaticResource db}, Path=BestSelling}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <Image Source="{Binding Path=ProductID, Converter={StaticResource ic}}"
+                               Width="200" Height="150"
+                               HorizontalAlignment="Center"/>
+                            <TextBlock Text="{Binding ProductName}" HorizontalAlignment="Center" FontSize="16"/>
+                            <TextBlock Text="{Binding UnitPrice, StringFormat='{}{0:c}', ConverterCulture=vi-VN}" 
+                                   HorizontalAlignment="Center" FontSize="16"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Columns="5"/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+            </ListBox>
+            <!--=============Sản phẩm xem nhiều nhất================-->
+            <Border Height="50" Background="#64b5f6">
+                <TextBlock Name="txtTitle" Style="{StaticResource Title}" Text="Sản phẩm xem nhiều nhất"/>
+            </Border>
+            <ListBox ItemsSource="{Binding Source={StaticResource db}, Path=MostViewing}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <Image Source="{Binding Path=ProductID, Converter={StaticResource ic}}"
+                               Width="200" Height="150"
+                               HorizontalAlignment="Center"/>
+                            <TextBlock Text="{Binding ProductName}" HorizontalAlignment="Center" FontSize="16"/>
+                            <TextBlock Text="{Binding UnitPrice, StringFormat='{}{0:c}', ConverterCulture=vi-VN}" 
+                                   HorizontalAlignment="Center" FontSize="16"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Columns="5"/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+            </ListBox>
+        </StackPanel>
+    </ScrollViewer>
+</Page>
